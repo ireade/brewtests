@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+      .container {
+        width: 450px;
+        height: 450px;
+        margin: 100px auto;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="container">
+      <div id="map"></div>
+    </div>    
+
+    
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 6.444489, lng: 3.425233},
+          zoom: 15
+        });
+
+        var trafficLayer = new google.maps.TrafficLayer();
+        trafficLayer.setMap(map);
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWbn2woYcKBa78EGto81shmbogj-9LfF0&callback=initMap"
+    async defer></script>
+  </body>
+</html>
